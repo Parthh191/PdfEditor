@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #1a1f35 0%, #0f172a 100%);
+  color: #ffffff;
+}
+
+/* Smooth scrolling and better text rendering */
+* {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced Heading Styles */
+.gradient-heading-primary {
+  background: linear-gradient(
+    to right,
+    #22d3ee 0%,    /* Cyan */
+    #818cf8 50%,   /* Indigo */
+    #22d3ee 100%   /* Cyan */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+  text-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+}
+
+.gradient-heading-secondary {
+  background: linear-gradient(
+    to right,
+    #f472b6 0%,    /* Pink */
+    #c084fc 100%   /* Purple */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-heading-accent {
+  background: linear-gradient(
+    to right,
+    #818cf8 0%,    /* Indigo */
+    #22d3ee 100%   /* Cyan */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.9;
+}
+
+/* Component backgrounds with enhanced visibility */
+.gradient-card {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.3);
+}
+
+.gradient-button {
+  background: linear-gradient(
+    135deg,
+    #818cf8,    /* Indigo */
+    #22d3ee     /* Cyan */
+  );
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-button:hover {
+  background: linear-gradient(
+    135deg,
+    #22d3ee,    /* Cyan */
+    #818cf8     /* Indigo */
+  );
+  transform: translateY(-2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px -6px rgba(34, 211, 238, 0.5);
+}
+
+/* PDF Viewer Enhancements */
+.react-pdf__Page {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.react-pdf__Page canvas {
+  border-radius: 1rem;
+}
+
+/* Tool selection indicator */
+.tool-active {
+  position: relative;
+}
+
+.tool-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #818cf8);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #818cf8,    /* Indigo */
+    #22d3ee     /* Cyan */
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    #22d3ee,    /* Cyan */
+    #818cf8     /* Indigo */
+  );
+}
+
+/* Animations */
+@keyframes shine {
+  to { background-position: 200% center; }
+}
